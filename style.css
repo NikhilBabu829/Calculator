@@ -3,7 +3,6 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,4 +98,30 @@ button:active{
 .equals{
     background-color: black;
     color: white;
+}
+
+@media(max-width : 960px){
+    .body{
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 90%;
+        height: 90%;
+        font-size: 60px;
+    }
+    .screenArea{
+        margin: 0;
+        height: 10vh;
+    }
+    .numberSection{
+        grid-gap: 10%;
+    }
+    .operatorSection{
+        grid-gap: 10%;
+    }
+    .zeroesSection{
+        grid-gap: 10%;
+    }
 }
