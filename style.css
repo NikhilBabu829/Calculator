@@ -83,7 +83,7 @@ body{
 button{
     background: none;
     border: black 1px solid;
-    border-radius: 20px;
+    border-radius: 100px;
     box-shadow: 5px 5px 5px black;
     transition: 0s transform;
     font-family: 'Quantico', sans-serif;
