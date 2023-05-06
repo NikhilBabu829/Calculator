@@ -13,7 +13,7 @@ body{
     width: 30%;
     height: 95vh;
     border: 10px solid black;
-    border-radius: 50px;
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ body{
     width: 90%;
     height: 15vh;
     border: 10px solid black;
-    border-radius: 50px;
+    border-radius: 40px;
     margin-bottom: 3%;
 }
 
@@ -37,33 +37,66 @@ body{
     width: 90%;
     height: 70vh;
     border: 10px solid black;
-    border-radius: 50px;
+    border-radius: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 3.5fr 1.2fr;
     grid-template-areas: 
         "sidebar content"
-        "footer footer"
+        "footer another"
     ;
 }
 
 .numberSection{
-    /* width: 50%;
-    height: 80%; */
-    border: 1px gold solid;
     grid-area: sidebar;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 6%;
+    padding: 10%;
 }
 
 .operatorSection{
-    /* width: 50%;
-    height: 80%; */
-    border: 1px blue solid;
     grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 6%;
+    padding: 10%;
 }
 
 .zeroesSection{
-    /* width: 100%;
-    height: 20%; */
-    border: 1px red solid;
     grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 6%;
+    padding: 10%;
+}
+
+.equalsSection{
+    grid-area: another;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8%;
+    padding: 10%;
+}
+
+button{
+    background: none;
+    border: black 1px solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px black;
+    transition: 0s transform;
+    font-family: 'Quantico', sans-serif;
+    font-size: large;
+}
+
+button:active{
+    transform: translateX(5px) translateY(5px);
+    box-shadow: none;
+}
+
+.equals{
+    background-color: black;
+    color: white;
 }
