@@ -1,0 +1,41 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 30%;
+    height: 95vh;
+    border: 10px solid black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    font-family: 'Quantico', sans-serif;
+    font-size: 100px;
+    text-align: end;
+}
+
+.screenArea{
+    width: 90%;
+    height: 15vh;
+    border: 10px solid black;
+    border-radius: 50px;
+    margin-bottom: 3%;
+}
+
+.numpadArea{
+    margin-top: 3%;
+    width: 90%;
+    height: 70vh;
+    border: 10px solid black;
+    border-radius: 50px;
+}
