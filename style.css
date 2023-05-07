@@ -20,7 +20,6 @@ body{
     color: black;
     font-family: 'Quantico', sans-serif;
     font-size: 100px;
-    text-align: end;
 }
 
 .screenArea{
@@ -29,6 +28,10 @@ body{
     border: 10px solid black;
     border-radius: 40px;
     margin-bottom: 3%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    direction: rtl;
+    text-align: start;
 }
 
 .numpadArea{
