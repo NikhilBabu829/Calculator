@@ -54,7 +54,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 6%;
+    grid-gap: 10%;
     padding: 10%;
 }
 
@@ -71,7 +71,7 @@ body{
     grid-area: footer;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 6%;
+    grid-gap: 10%;
     padding: 10%;
 }
 
@@ -79,7 +79,7 @@ body{
     grid-area: another;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 8%;
+    grid-gap: 10%;
     padding: 10%;
 }
 
@@ -92,6 +92,15 @@ button{
     font-family: 'Quantico', sans-serif;
     font-size: large;
 }
+/* .numbers{
+    height: 50%;
+    width: 120%;
+}
+
+.decimal{
+    height: 50%;
+    width: 120%;
+} */
 
 button:active{
     transform: translateX(5px) translateY(5px);
