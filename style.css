@@ -6,13 +6,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #2b2d42;
 }
 
 .container{
     width: 30%;
-    height: 95vh;
-    border: 10px solid black;
+    height: 85vh;
+    border: 10px solid white;
     border-radius: 40px;
+    background-color: #2b2d42;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,20 +27,23 @@ body{
 .screenArea{
     width: 90%;
     height: 15vh;
-    border: 10px solid black;
+    border: 10px solid white;
     border-radius: 40px;
     margin-bottom: 3%;
     overflow-x: scroll;
     overflow-y: hidden;
     direction: rtl;
     text-align: start;
+    color: white;
+    background-color: #2b2d42;
 }
 
 .numpadArea{
     width: 90%;
-    height: 70vh;
-    border: 10px solid black;
+    height: 60vh;
+    border: 10px solid white;
     border-radius: 40px;
+    background-color: #2b2d42;
 }
 
 .one{
@@ -85,41 +90,46 @@ body{
     flex-grow: 0.6;
 }
 
-/* .operatorSets{
-    grid-area: "side";
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 2%;
+.numbers{
+    background-color: #8ecae6;
 }
 
-.numbers{
-    grid-area: "top";
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 2%;
-} */
+.power{
+    background-color: #fb90a5;
+}
+
+.operator{
+    background-color: #fb90a5;
+}
+
+.equals{
+    background-color: #ffb703;
+}
+
+.decimal{
+    background-color: #fb90a5;
+}
+
+.clear{
+    background-color: #fb90a5;
+}
 
 button{
     width: 20%;
-    height: 70%;
-    background: none;
-    border: black 1px solid;
+    height: 60%;
+    border: none;
+    color: white;
     border-radius: 100px;
-    box-shadow: 5px 5px 5px black;
     transition: 0s transform;
     font-family: 'Quantico', sans-serif;
-    font-size: large;
+    font-size: x-large;
+    font-weight: 800;
+    box-shadow: 5px 5px 5px black;
 }
 
 button:active{
     transform: translateX(5px) translateY(5px);
     box-shadow: none;
-}
-
-.equals{
-    background-color: black;
-    color: white;
 }
 
 @media(max-width : 960px){
@@ -130,12 +140,17 @@ button:active{
     }
     .container{
         width: 90%;
-        height: 90%;
+        height: 80%;
         font-size: 60px;
     }
     .screenArea{
         margin: 0;
         height: 10vh;
+        margin-bottom: 3%;
+        margin-top: 3%;
+    }
+    .numpadArea{
+        margin-bottom: 3%;
     }
     .numberSection{
         grid-gap: 10%;
