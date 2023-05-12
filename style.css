@@ -35,55 +35,74 @@ body{
 }
 
 .numpadArea{
-    margin-top: 3%;
     width: 90%;
     height: 70vh;
     border: 10px solid black;
     border-radius: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3.5fr 1.2fr;
-    grid-template-areas: 
-        "sidebar content"
-        "footer another"
-    ;
 }
 
-.numberSection{
-    grid-area: sidebar;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10%;
-    padding: 10%;
+.one{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.operatorSection{
-    grid-area: content;
+.two{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.three{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.four{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.five{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.five .numbers{
+    flex-grow: 0.6;
+}
+
+/* .operatorSets{
+    grid-area: "side";
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 6%;
-    padding: 10%;
+    gap: 2%;
 }
 
-.zeroesSection{
-    grid-area: footer;
+.numbers{
+    grid-area: "top";
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10%;
-    padding: 10%;
-}
-
-.equalsSection{
-    grid-area: another;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10%;
-    padding: 10%;
-}
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2%;
+} */
 
 button{
+    width: 20%;
+    height: 70%;
     background: none;
     border: black 1px solid;
     border-radius: 100px;
@@ -92,15 +111,6 @@ button{
     font-family: 'Quantico', sans-serif;
     font-size: large;
 }
-/* .numbers{
-    height: 50%;
-    width: 120%;
-}
-
-.decimal{
-    height: 50%;
-    width: 120%;
-} */
 
 button:active{
     transform: translateX(5px) translateY(5px);
