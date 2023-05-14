@@ -137,6 +137,9 @@ equal.addEventListener('click',()=>{
 clear.addEventListener('click',()=>{
     if(powerIN){
         input = ''
+        number = 0
+        operator = ''
+        previousAnswer = 0
         screenArea.innerText = '0'
     }    
 })
