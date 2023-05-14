@@ -4,8 +4,15 @@ const power = document.querySelectorAll('.power')
 const clear = document.querySelector('.clear')
 const body = document.querySelector('body')
 const operators = document.querySelectorAll('.operator')
+const equal = document.querySelector('.equals')
 
 let input = ''
+
+let number
+
+let operator  
+
+let previousAnswer
 
 let powerIN = false
 
@@ -30,7 +37,7 @@ power.forEach(btn =>{
     })
 })
 
-// TODO: create a variable that hold all the digits pressed
+// TODO: create a variable that hold all the digits pressed (comp)
 // TODO: create a event for operators
 // TODO: create a funtion that seperates the digits before and after the operator on equals click
 // TODO: create a function that passes the two side of digits to a function that does the arithmetic based on the opperator passed to it.
@@ -45,16 +52,88 @@ numbers.forEach(ele =>{
     })
 })
 
+//function that removes the oeprators form the input and sepeartes the number to another variable.
+const changeInGlobalValue = ()=>{ 
+    if(input.indexOf('+') != -1){
+        operator = '+'
+        input = input.replace('+', '')
+        number = input
+        input = ''
+    }
+    else if(input.indexOf('-') != -1){
+        operator = '-'
+        input = input.replace('-', '')
+        number = input
+        input = ''
+    }
+    else if(input.indexOf('/') != -1){
+        operator = '/'
+        input = input.replace('/', '')
+        number = input
+        input = ''
+    }
+    else{
+        operator = 'x'
+        input = input.replace('x', '')
+        number = input
+        input = ''
+    }
+}
+
+//this is the operator event
 operators.forEach(op => {
     op.addEventListener('click',()=>{
         if(powerIN){
-            input += `${op.innerText}`
-            screenArea.innerText = input
+            if((input.indexOf('+') == -1) && (input.indexOf('-') == -1) && (input.indexOf('x') == -1) && (input.indexOf('/') == -1)){
+                input += `${op.innerText}`
+                screenArea.innerText = ''
+                changeInGlobalValue() 
+            }
+            else{
+                screenArea.innerText = ''
+                changeInGlobalValue()
+            }
         }
     })
 })
 
-//This is the All Clear route
+const calculatingAnswer = (op)=>{
+    let sec 
+    let fir 
+    if(op == '+'){
+        sec = parseFloat(input)
+        fir = parseFloat(number)
+        answer = fir + sec 
+    }
+    else if(op == '-'){
+        sec = parseFloat(input)
+        fir = parseFloat(number)
+        answer = fir - sec
+    }
+    else if(op == 'x'){
+        sec = parseFloat(input)
+        fir = parseFloat(number)
+        answer = fir * sec
+    }
+    else if(op == '/'){
+        sec = parseFloat(input)
+        fir = parseFloat(number)
+        answer = fir / sec
+    }
+    screenArea.innerText = answer
+    previousAnswer = answer
+}
+
+//this is the equals event
+equal.addEventListener('click',()=>{
+    if(powerIN){
+        if(number != ''){
+            calculatingAnswer(operator)
+        }
+    }
+})
+
+//This is the All Clear event
 clear.addEventListener('click',()=>{
     if(powerIN){
         input = ''
