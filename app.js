@@ -5,6 +5,7 @@ const clear = document.querySelector('.clear')
 const body = document.querySelector('body')
 const operators = document.querySelectorAll('.operator')
 const equal = document.querySelector('.equals')
+const decimal = document.querySelector('.decimal')
 
 let input = ''
 
@@ -41,7 +42,9 @@ power.forEach(btn =>{
 })
 
 // TODO: add decimal functionality 
-// TODO: show only 4 decimal digits after the decimal point.
+// TODO: show only 4 decimal digits after the decimal point. - completed
+// TODO: diable the buttons when an operator is already existing.
+
 //this is the digit clicks 
 numbers.forEach(ele =>{
     ele.addEventListener('click', ()=>{
@@ -84,10 +87,11 @@ const changeInGlobalValue = ()=>{
 operators.forEach(op => {
     op.addEventListener('click',()=>{
         if(powerIN){
+
             if((input.indexOf('+') == -1) && (input.indexOf('-') == -1) && (input.indexOf('x') == -1) && (input.indexOf('/') == -1)){
                 input += `${op.innerText}`
                 screenArea.innerText = ''
-                changeInGlobalValue() 
+                changeInGlobalValue()
             }
             else{
                 screenArea.innerText = ''
@@ -144,8 +148,9 @@ const calculatingAnswer = (op)=>{
         }
         previousAnswer = answer 
     }
-    screenArea.innerText = answer
+    screenArea.innerText = Math.floor(answer * 10000)/10000
     previousAnswer = answer
+    operator = ''
 }
 
 //this is the equals event
@@ -154,6 +159,13 @@ equal.addEventListener('click',()=>{
         if(number != ''){
             calculatingAnswer(operator)
         }
+    }
+})
+
+decimal.addEventListener('click',()=>{
+    if(powerIN){
+        input += `${decimal.innerText}`
+        screenArea.innerText = input
     }
 })
 
