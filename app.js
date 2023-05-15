@@ -30,6 +30,10 @@ const powerCheck = (element)=>{
     }
     else{
         screenArea.innerText = '0'
+        input = ''
+        number = 0
+        operator = ''
+        previousAnswer = 0
         powerIN = true
     }
 }
@@ -41,9 +45,9 @@ power.forEach(btn =>{
     })
 })
 
-// TODO: add decimal functionality 
+// TODO: add decimal functionality - completed
 // TODO: show only 4 decimal digits after the decimal point. - completed
-// TODO: diable the buttons when an operator is already existing.
+// TODO: disable the buttons when an operator is already existing.
 
 //this is the digit clicks 
 numbers.forEach(ele =>{
@@ -87,15 +91,17 @@ const changeInGlobalValue = ()=>{
 operators.forEach(op => {
     op.addEventListener('click',()=>{
         if(powerIN){
-
-            if((input.indexOf('+') == -1) && (input.indexOf('-') == -1) && (input.indexOf('x') == -1) && (input.indexOf('/') == -1)){
-                input += `${op.innerText}`
-                screenArea.innerText = ''
-                changeInGlobalValue()
-            }
-            else{
-                screenArea.innerText = ''
-                changeInGlobalValue()
+            console.log(op)
+            if(operator == ''){
+                if((input.indexOf('+') == -1) && (input.indexOf('-') == -1) && (input.indexOf('x') == -1) && (input.indexOf('/') == -1)){
+                    input += `${op.innerText}`
+                    screenArea.innerText = ''
+                    changeInGlobalValue()
+                }
+                else{
+                    screenArea.innerText = ''
+                    changeInGlobalValue()
+                }
             }
         }
     })
