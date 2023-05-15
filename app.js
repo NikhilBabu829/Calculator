@@ -12,7 +12,7 @@ let number
 
 let operator  
 
-let previousAnswer
+let previousAnswer = 0
 
 let powerIN = false
 
@@ -103,22 +103,46 @@ const calculatingAnswer = (op)=>{
     if(op == '+'){
         sec = parseFloat(input)
         fir = parseFloat(number)
-        answer = fir + sec 
+        if(previousAnswer != 0){
+            answer = sec + previousAnswer
+        }
+        else{
+            answer = fir + sec
+        }
+        previousAnswer = answer 
     }
     else if(op == '-'){
         sec = parseFloat(input)
         fir = parseFloat(number)
-        answer = fir - sec
+        if(previousAnswer != 0){
+            answer = previousAnswer - sec
+        }
+        else{
+            answer = fir - sec
+        }
+        previousAnswer = answer 
     }
     else if(op == 'x'){
         sec = parseFloat(input)
         fir = parseFloat(number)
-        answer = fir * sec
+        if(previousAnswer != 0){
+            answer = sec * previousAnswer
+        }
+        else{
+            answer = fir * sec
+        }
+        previousAnswer = answer 
     }
     else if(op == '/'){
         sec = parseFloat(input)
         fir = parseFloat(number)
-        answer = fir / sec
+        if(previousAnswer != 0){
+            answer = previousAnswer / sec
+        }
+        else{
+            answer = fir / sec
+        }
+        previousAnswer = answer 
     }
     screenArea.innerText = answer
     previousAnswer = answer
