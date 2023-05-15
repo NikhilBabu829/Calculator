@@ -40,11 +40,8 @@ power.forEach(btn =>{
     })
 })
 
-// TODO: create a variable that hold all the digits pressed (comp)
-// TODO: create a event for operators
-// TODO: create a funtion that seperates the digits before and after the operator on equals click
-// TODO: create a function that passes the two side of digits to a function that does the arithmetic based on the opperator passed to it.
-
+// TODO: add decimal functionality 
+// TODO: show only 4 decimal digits after the decimal point.
 //this is the digit clicks 
 numbers.forEach(ele =>{
     ele.addEventListener('click', ()=>{
