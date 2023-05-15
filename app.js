@@ -91,7 +91,6 @@ const changeInGlobalValue = ()=>{
 operators.forEach(op => {
     op.addEventListener('click',()=>{
         if(powerIN){
-            console.log(op)
             if(operator == ''){
                 if((input.indexOf('+') == -1) && (input.indexOf('-') == -1) && (input.indexOf('x') == -1) && (input.indexOf('/') == -1)){
                     input += `${op.innerText}`
