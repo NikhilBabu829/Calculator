@@ -22,6 +22,9 @@ const powerCheck = (element)=>{
     if(power == 'OFF'){
         screenArea.innerText = ''
         input = ''
+        number = 0
+        operator = ''
+        previousAnswer = 0
         powerIN = false
     }
     else{
